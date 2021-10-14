@@ -138,4 +138,20 @@ df[["age", "salary"]]
 
 df.columns #buh column-ii neriig harna
 
-git config --global user.name "iiraaa"
+#Task 1.2.
+
+#loop
+
+import pandas as pd
+
+df = pd.read_excel("C:/Users/Ider.E/Desktop/PythonCourse/Lecture2/repo2/week2/data.xlsx")
+fem = df[['firstName', 'lastName', 'age', 'gender']]
+for fem in df:
+    if (fem['age'] > 25) & (fem['gender'] == "M"):
+        print(fem)
+
+#pandas
+
+female25 = df[(df["age"] > 25) & (df["gender"] != "M")][["firstName", "lastName", "gender", "age"]]
+
+female25.to_csv(r'C:/Users/Ider.E/Desktop/PythonCourse/Lecture2/repo2/week2/female25.csv', index = None, header = True)
